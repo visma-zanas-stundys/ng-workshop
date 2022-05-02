@@ -2,4 +2,31 @@
   --bs-font-sans-serif: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --border-radius: 8px;
+  --bs-body-bg: hsl(14, 28%, 88%);
+
+  --surface-bg: hsl(0, 0%, 100%);
+  --spacer: 12px;
+
+  /* https://www.joshwcomeau.com/shadow-palette/ */
+  --shadow-color: 15deg 12% 55%;
+  --shadow-elevation-low: 0px 0.5px 0.6px hsl(var(--shadow-color) / 0.34),
+    0px 0.8px 0.9px -1.2px hsl(var(--shadow-color) / 0.34),
+    0px 2px 2.3px -2.5px hsl(var(--shadow-color) / 0.34);
+  --shadow-elevation-medium: 0px 0.5px 0.6px hsl(var(--shadow-color) / 0.36),
+    0px 1.6px 1.8px -0.8px hsl(var(--shadow-color) / 0.36),
+    0px 4.1px 4.6px -1.7px hsl(var(--shadow-color) / 0.36),
+    0px 9.9px 11.1px -2.5px hsl(var(--shadow-color) / 0.36);
+  --shadow-elevation-high: 0px 0.5px 0.6px hsl(var(--shadow-color) / 0.34),
+    0px 2.9px 3.3px -0.4px hsl(var(--shadow-color) / 0.34),
+    0px 5.4px 6.1px -0.7px hsl(var(--shadow-color) / 0.34),
+    0px 8.9px 10px -1.1px hsl(var(--shadow-color) / 0.34),
+    -0.1px 14.2px 16px -1.4px hsl(var(--shadow-color) / 0.34),
+    -0.1px 22.1px 24.9px -1.8px hsl(var(--shadow-color) / 0.34),
+    -0.1px 33.6px 37.8px -2.1px hsl(var(--shadow-color) / 0.34),
+    -0.2px 49.5px 55.7px -2.5px hsl(var(--shadow-color) / 0.34);
+}
+
+html {
+  background-color: var(--body-bg);
 }

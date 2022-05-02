@@ -1,0 +1,56 @@
+:host {
+  --card-width: 216px;
+  --card-image-bg: grey;
+  --card-title-bg: hsla(0, 0%, 30%, 0.5);
+  --card-title-color: white;
+
+  display: block;
+  max-width: var(--card-width);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-elevation-medium);
+  background: var(--surface-bg);
+  padding: var(--spacer);
+  flex: 1;
+}
+
+figure {
+  margin: calc(var(--spacer) * -1);
+  margin-bottom: var(--spacer);
+  display: grid;
+  align-items: flex-end;
+  aspect-ratio: 1 / 1;
+}
+
+figure figcaption,
+figure img {
+  grid-area: 1 / 1;
+}
+
+figure img {
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  background: var(--card-image-bg);
+}
+
+figure figcaption {
+  padding: var(--spacer);
+  background: var(--card-title-bg);
+  color: var(--card-title-color);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+  margin: 0;
+  font-weight: bold;
+}
+
+p {
+  margin: 0;
+}
+
+figure figcaption,
+p {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

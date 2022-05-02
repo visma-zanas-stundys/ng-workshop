@@ -1,0 +1,7 @@
+<figure>
+  <img [src]="imageUrl" alt="" />
+  <figcaption>{{ name }}</figcaption>
+</figure>
+<p>{{ address }}</p>
+<p>{{ distanceInKm }} km</p>
+<p *ngIf="rating">{{ rating > 5 ? "👍" : "👎" }} {{ rating }}</p>
