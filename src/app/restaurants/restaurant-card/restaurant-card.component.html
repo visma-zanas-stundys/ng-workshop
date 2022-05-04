@@ -1,7 +1,10 @@
 <figure>
-  <img [src]="imageUrl" alt="" />
-  <figcaption>{{ name }}</figcaption>
+  <img [src]="restaurant.imageUrl" alt="" />
+  <figcaption>{{ restaurant.name }}</figcaption>
+  <strong *ngIf="restaurant.discount" class="discount-flag">{{
+    restaurant.discount
+  }}</strong>
 </figure>
-<p>{{ address }}</p>
-<p>{{ distanceInKm }} km</p>
-<p *ngIf="rating">{{ rating > 5 ? "👍" : "👎" }} {{ rating }}</p>
+<p>{{ restaurant.address }}</p>
+<p>{{ restaurant.distanceInKm }} km</p>
+<p>{{ restaurant.rating > 5 ? "👍" : "👎" }} {{ restaurant.rating }}</p>

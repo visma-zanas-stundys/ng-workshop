@@ -1,5 +1,4 @@
 :host {
-  --card-width: 216px;
   --card-image-bg: grey;
   --card-title-bg: hsla(0, 0%, 30%, 0.5);
   --card-title-color: white;
@@ -15,10 +14,11 @@
 
 figure {
   margin: calc(var(--spacer) * -1);
-  margin-bottom: var(--spacer);
+  margin-block-end: var(--spacer);
   display: grid;
   align-items: flex-end;
   aspect-ratio: 1 / 1;
+  position: relative;
 }
 
 figure figcaption,
@@ -38,7 +38,7 @@ figure figcaption {
   padding: var(--spacer);
   background: var(--card-title-bg);
   color: var(--card-title-color);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-block-start: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(3px);
   margin: 0;
   font-weight: bold;
@@ -53,4 +53,17 @@ p {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+.discount-flag {
+  grid-area: 1/1;
+  align-self: flex-start;
+  justify-self: flex-end;
+
+  margin: 4px;
+  padding: 8px 12px;
+  border-radius: calc(var(--border-radius) - 2px);
+  background: var(--bs-red);
+  color: var(--bs-white);
+  width: min-content;
 }

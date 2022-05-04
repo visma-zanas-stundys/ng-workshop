@@ -1,0 +1,7 @@
+:host {
+  --card-width: 216px;
+
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, var(--card-width));
+}
