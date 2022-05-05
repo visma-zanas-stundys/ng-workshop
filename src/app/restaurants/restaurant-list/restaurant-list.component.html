@@ -1,4 +1,5 @@
 <app-restaurant-card
   *ngFor="let r of restaurants"
   [restaurant]="r"
+  [routerLink]="[r.id]"
 ></app-restaurant-card>

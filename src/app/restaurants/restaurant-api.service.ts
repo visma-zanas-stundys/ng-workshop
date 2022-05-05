@@ -14,4 +14,8 @@ export class RestaurantApiService {
   getAll(): Observable<Restaurant[]> {
     return this.httpClient.get<Restaurant[]>(this.endpoint);
   }
+
+  getOne(id: Restaurant['id']): Observable<Restaurant> {
+    return this.httpClient.get<Restaurant>(`${this.endpoint}/${id}`);
+  }
 }

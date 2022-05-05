@@ -1,0 +1,22 @@
+<article *ngIf="restaurant$ | async as restaurant" class="card">
+  <header class="card-header" style="--image: url({{ restaurant.imageUrl }})">
+    <h2>{{ restaurant.name }}<br /></h2>
+    <span class="text-white-50">
+      {{ restaurant.address }} / {{ restaurant.distanceInKm }}km
+    </span>
+
+    <p>{{ restaurant.rating | stars }}</p>
+  </header>
+
+  <div class="card-body">
+    <p *ngIf="restaurant.discount" class="text-danger mb-3">
+      {{ restaurant.discount }}
+    </p>
+    <p>{{ restaurant.description }}</p>
+  </div>
+
+  <footer class="card-footer d-flex justify-content-between">
+    <button class="btn text-danger" type="button">Delete</button>
+    <a routerLink="edit" class="btn text-primary" type="button">Edit</a>
+  </footer>
+</article>

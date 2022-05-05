@@ -1,4 +1,11 @@
-import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostBinding,
+  HostListener,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { Restaurant } from '../../interfaces/restaurant';
 
 @Component({
@@ -11,9 +18,17 @@ export class RestaurantCardComponent implements OnInit {
 
   @HostBinding('attr.role') role = 'article';
 
+  constructor(private elementRef: ElementRef<HTMLElement>) {}
+
   ngOnInit() {
     if (!this.restaurant) {
       throw new Error('RestaurantCardComponent: restaurant is not defined');
     }
+  }
+
+  @HostListener('keydown.space')
+  @HostListener('keydown.enter')
+  onKeyboardClick() {
+    this.elementRef.nativeElement.click();
   }
 }

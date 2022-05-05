@@ -1,0 +1,10 @@
+<h1 class="h-4 mb-4">Restaurants</h1>
+
+<app-restaurant-list
+  *ngIf="restaurants$ | async as restaurants; else loadingRef"
+  [restaurants]="restaurants"
+></app-restaurant-list>
+
+<ng-template #loadingRef>
+  <output class="text-black-50">Loading...</output>
+</ng-template>

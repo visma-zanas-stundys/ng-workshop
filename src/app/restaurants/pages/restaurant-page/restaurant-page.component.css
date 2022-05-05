@@ -1,0 +1,24 @@
+.card {
+  max-width: 40ch;
+}
+
+.card-header {
+  background-image: linear-gradient(45deg, rgba(0 0 0 / 40%), transparent),
+    var(--image);
+  background-size: cover;
+  color: var(--bs-white);
+}
+
+h2 {
+  text-shadow: 0 2px rgba(0 0 0 / 40%);
+  font-weight: bold;
+  margin-bottom: -4px;
+}
+
+p {
+  margin: 0;
+}
+
+.card-body p {
+  white-space: pre-line;
+}

@@ -10,6 +10,12 @@
   background: var(--surface-bg);
   padding: var(--spacer);
   flex: 1;
+  cursor: pointer;
+  transition: box-shadow 0.4s ease;
+}
+
+:host:hover {
+  box-shadow: var(--shadow-elevation-high);
 }
 
 figure {

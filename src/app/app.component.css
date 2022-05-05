@@ -1,0 +1,24 @@
+nav {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: hsl(340, 82%, 52%);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  color: white;
+  box-shadow: 0 1px 4px hsla(340, 82%, 52%, 0.278);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: text-shadow 0.3s;
+}
+
+a.active {
+  font-weight: bold;
+  text-decoration: underline;
+  text-shadow: 0 0 16px rgba(255 255 255 / 40%),
+    0 0 32px rgba(255 255 255 / 20%);
+}

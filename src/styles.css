@@ -30,3 +30,27 @@
 html {
   background-color: var(--body-bg);
 }
+
+.card {
+  box-shadow: var(--shadow-elevation-medium);
+  border: none;
+  border-radius: var(--border-radius);
+}
+
+.card-header {
+  padding: 2rem;
+}
+
+.card-header:first-child {
+  border-radius: calc(var(--border-radius) - 1px)
+    calc(var(--border-radius) - 1px) 0 0;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.card-footer:last-child {
+  border-radius: 0 0 calc(var(--border-radius) - 1px)
+    calc(var(--border-radius) - 1px);
+}
