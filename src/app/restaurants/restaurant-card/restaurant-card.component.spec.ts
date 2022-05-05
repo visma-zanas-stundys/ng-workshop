@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RestaurantsModule } from '../restaurants.module';
 
 import { RestaurantCardComponent } from './restaurant-card.component';
 
@@ -8,6 +9,7 @@ describe('RestaurantCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [RestaurantsModule],
       declarations: [RestaurantCardComponent],
     }).compileComponents();
   });

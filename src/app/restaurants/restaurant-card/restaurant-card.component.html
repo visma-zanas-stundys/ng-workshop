@@ -7,4 +7,4 @@
 </figure>
 <p>{{ restaurant.address }}</p>
 <p>{{ restaurant.distanceInKm }} km</p>
-<p>{{ restaurant.rating > 5 ? "👍" : "👎" }} {{ restaurant.rating }}</p>
+<p>{{ restaurant.rating | stars }}</p>
