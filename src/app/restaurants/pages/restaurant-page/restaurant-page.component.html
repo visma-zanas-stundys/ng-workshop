@@ -1,7 +1,7 @@
 <article *ngIf="restaurant$ | async as restaurant" class="card">
   <header class="card-header" style="--image: url({{ restaurant.imageUrl }})">
     <h2>{{ restaurant.name }}<br /></h2>
-    <span class="text-white-50">
+    <span class="text-white">
       {{ restaurant.address }} / {{ restaurant.distanceInKm }}km
     </span>
 

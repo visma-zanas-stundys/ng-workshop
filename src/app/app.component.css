@@ -1,13 +1,14 @@
 nav {
+  z-index: 1;
+  box-shadow: var(--primary-color-shadow);
+  position: sticky;
+  top: 0;
+  background: var(--primary-color);
   display: flex;
   gap: 1rem;
   padding: 1rem 1.5rem;
-  background: hsl(340, 82%, 52%);
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  color: white;
-  box-shadow: 0 1px 4px hsla(340, 82%, 52%, 0.278);
+  color: var(--primary-text-color);
+  align-items: center;
 }
 
 a {
@@ -19,6 +20,43 @@ a {
 a.active {
   font-weight: bold;
   text-decoration: underline;
-  text-shadow: 0 0 16px rgba(255 255 255 / 40%),
-    0 0 32px rgba(255 255 255 / 20%);
+}
+
+.loader {
+  transition: all 0.2s;
+  overflow: hidden;
+  display: inline-block;
+  width: 0;
+  height: 1em;
+  line-height: 1;
+  margin-right: -1rem;
+  opacity: 0;
+}
+
+.loader.loading {
+  width: 1em;
+  transition-delay: 0.2s;
+  margin-right: 0;
+  opacity: 1;
+}
+
+.loader::before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-right-color: currentColor;
+  animation: 0.4s spin infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

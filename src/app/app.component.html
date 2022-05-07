@@ -1,4 +1,9 @@
 <nav>
+  <output
+    class="loader"
+    [attr.aria-label]="isLoading ? 'Loading' : undefined"
+    [class.loading]="isLoading"
+  ></output>
   <a
     routerLink="restaurants"
     routerLinkActive="active"

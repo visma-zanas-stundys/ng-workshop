@@ -18,6 +18,8 @@ describe('RestaurantCardComponent', () => {
     fixture = TestBed.createComponent(RestaurantCardComponent);
     component = fixture.componentInstance;
     component.restaurant = {
+      id: 1,
+      description: '',
       name: 'Jammi Kebabai',
       address: 'Stoties g. 22',
       distanceInKm: 4.5,

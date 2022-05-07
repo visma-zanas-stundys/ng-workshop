@@ -1,20 +1,29 @@
+import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { of } from 'rxjs';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { of, Subject } from 'rxjs';
 import { AppComponent } from './app.component';
-import { RestaurantApiService } from './restaurants/restaurant-api.service';
 
 describe('AppComponent', () => {
+  let events$: Subject<NavigationStart | NavigationEnd>;
+
   beforeEach(async () => {
+    events$ = new Subject<NavigationStart | NavigationEnd>();
+
     await TestBed.configureTestingModule({
       declarations: [AppComponent],
       providers: [
         {
-          provide: RestaurantApiService,
-          useValue: jasmine.createSpyObj<RestaurantApiService>(
-            'RestaurantApiService',
-            ['getAll']
-          ),
+          provide: Router,
+          useValue: {
+            events: events$,
+          },
         },
+      ],
+      schemas: [
+        // Ignores unrecognized <router-outlet> due to missing RouterModule
+        NO_ERRORS_SCHEMA,
       ],
     }).compileComponents();
   });

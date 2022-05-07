@@ -48,10 +48,22 @@ export class RestaurantResolver implements Resolve<Restaurant> {
   }
 }
 
+@Injectable({ providedIn: 'root' })
+export class RestaurantsResolver implements Resolve<Restaurant[]> {
+  constructor(private apiService: RestaurantApiService) {}
+
+  resolve(): Observable<Restaurant[]> {
+    return this.apiService.getAll();
+  }
+}
+
 const routes: Route[] = [
   {
     path: '',
     component: RestaurantsPageComponent,
+    resolve: {
+      restaurants: RestaurantsResolver,
+    },
   },
   {
     path: 'new',
