@@ -19,14 +19,18 @@ export class RestaurantApiService {
     return this.httpClient.get<Restaurant>(`${this.endpoint}/${id}`);
   }
 
-  create(formValue: Omit<Restaurant, 'id'>) {
+  create(formValue: Omit<Restaurant, 'id'>): Observable<Restaurant> {
     return this.httpClient.post<Restaurant>(this.endpoint, formValue);
   }
 
-  update(formValue: Restaurant) {
+  update(formValue: Restaurant): Observable<Restaurant> {
     return this.httpClient.put<Restaurant>(
       `${this.endpoint}/${formValue.id}`,
       formValue
     );
+  }
+
+  delete(restaurantId: number): Observable<any> {
+    return this.httpClient.delete(`${this.endpoint}/${restaurantId}`);
   }
 }

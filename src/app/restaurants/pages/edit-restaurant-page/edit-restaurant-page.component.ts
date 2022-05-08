@@ -62,7 +62,7 @@ export class EditRestaurantPageComponent implements OnInit {
   onSubmit() {
     this.isLoading = true;
 
-    const isEditing = this.form.value.id !== undefined;
+    const isEditing = typeof this.form.value.id === 'number';
     const request$ = isEditing
       ? this.apiService.update(this.form.value)
       : this.apiService.create(this.form.value);

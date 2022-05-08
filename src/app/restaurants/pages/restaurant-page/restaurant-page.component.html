@@ -16,7 +16,14 @@
   </div>
 
   <footer class="card-footer d-flex justify-content-between">
-    <button class="btn text-danger" type="button">Delete</button>
+    <button
+      (click)="onDeleteClick(restaurant.id)"
+      class="btn text-danger"
+      type="button"
+      [disabled]="isDeleting"
+    >
+      {{ isDeleting ? "Deleting..." : "Delete" }}
+    </button>
     <a routerLink="edit" class="btn text-primary" type="button">Edit</a>
   </footer>
 </article>

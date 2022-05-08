@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { Restaurant } from 'src/app/interfaces/restaurant';
+import { RestaurantApiService } from '../../restaurant-api.service';
 
 @Component({
   selector: 'app-restaurant-page',
@@ -13,7 +14,29 @@ export class RestaurantPageComponent implements OnInit {
     map((data) => data['restaurant'])
   );
 
-  constructor(private route: ActivatedRoute) {}
+  isDeleting = false;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private apiService: RestaurantApiService
+  ) {}
 
   ngOnInit(): void {}
+
+  onDeleteClick(restaurantId: Restaurant['id']) {
+    this.isDeleting = true;
+
+    this.apiService.delete(restaurantId).subscribe({
+      next: () => {
+        this.router.navigate(['..'], { relativeTo: this.route });
+      },
+      error: () => {
+        this.isDeleting = false;
+      },
+      complete: () => {
+        this.isDeleting = false;
+      },
+    });
+  }
 }

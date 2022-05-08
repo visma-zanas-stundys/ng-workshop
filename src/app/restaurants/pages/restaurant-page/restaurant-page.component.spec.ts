@@ -1,7 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { Restaurant } from 'src/app/interfaces/restaurant';
+import { RestaurantApiService } from '../../restaurant-api.service';
 
 import { RestaurantPageComponent } from './restaurant-page.component';
 
@@ -21,6 +22,17 @@ describe('RestaurantPageComponent', () => {
           useValue: {
             data: routeData$,
           },
+        },
+        {
+          provide: Router,
+          useValue: jasmine.createSpyObj<Router>('Router', ['navigate']),
+        },
+        {
+          provide: RestaurantApiService,
+          useValue: jasmine.createSpyObj<RestaurantApiService>(
+            'RestaurantApiService',
+            ['delete']
+          ),
         },
       ],
     }).compileComponents();
