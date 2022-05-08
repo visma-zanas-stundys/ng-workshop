@@ -37,7 +37,7 @@ function makeMockRestaurants() {
       address: "Vilniaus g. 7",
       distanceInKm: 2.5,
       rating: 9.5,
-      discount: "Nemokamas atvežimas",
+      discount: "Free shipping",
       description:
         "Didelį svečių susidomėjimą paskatino pirmasis restoranas, nudžiuginęs kauniečius išskirtine meniu koncepcija, nepriekaištingo skonio patiekalais bei autentišku interjeru, primenančiu XIXa. Londono stoties architektūrą, kas puikiai atspindėjo ,,Grill London“ koncepciją. Restoranai – patrauklūs tiek šeimoms, tiek šiuolaikiniam jaunimui. Dėl jaukios, stilingos aplinkos bei prieinamų kainų ,,Grill London“ tapo viena populiariausių vietų, o augantis lankytojų skaičius paskatino restoranų plėtrą Kaune, Vilniuje, Šiauliuose ir Klaipėdoje!",
     },

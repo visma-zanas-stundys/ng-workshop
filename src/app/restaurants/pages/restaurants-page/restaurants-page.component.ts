@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
-import { RestaurantApiService } from '../../restaurant-api.service';
 
 @Component({
   selector: 'app-restaurants-page',

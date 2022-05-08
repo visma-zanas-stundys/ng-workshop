@@ -19,6 +19,8 @@ import { EditRestaurantPageComponent } from './pages/edit-restaurant-page/edit-r
 import { Restaurant } from '../interfaces/restaurant';
 import { RestaurantApiService } from './restaurant-api.service';
 import { Observable } from 'rxjs';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ValidationPipe } from './pipes/validation.pipe';
 
 @Injectable({ providedIn: 'root' })
 export class RestaurantIdGuard implements CanActivate {
@@ -77,6 +79,14 @@ const routes: Route[] = [
       restaurant: RestaurantResolver,
     },
   },
+  {
+    path: ':id/edit',
+    component: EditRestaurantPageComponent,
+    canActivate: [RestaurantIdGuard],
+    resolve: {
+      restaurant: RestaurantResolver,
+    },
+  },
 ];
 
 @NgModule({
@@ -87,8 +97,9 @@ const routes: Route[] = [
     RestaurantPageComponent,
     RestaurantsPageComponent,
     EditRestaurantPageComponent,
+    ValidationPipe,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule.forChild(routes)],
   exports: [RestaurantCardComponent, RestaurantListComponent],
 })
 export class RestaurantsModule {}
