@@ -21,6 +21,7 @@ import { RestaurantApiService } from './restaurant-api.service';
 import { Observable } from 'rxjs';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ValidationPipe } from './pipes/validation.pipe';
+import { LikeDislikeModule } from '../like-dislike/like-dislike.module';
 
 @Injectable({ providedIn: 'root' })
 export class RestaurantIdGuard implements CanActivate {
@@ -99,7 +100,12 @@ const routes: Route[] = [
     EditRestaurantPageComponent,
     ValidationPipe,
   ],
-  imports: [CommonModule, ReactiveFormsModule, RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    LikeDislikeModule,
+    RouterModule.forChild(routes),
+  ],
   exports: [RestaurantCardComponent, RestaurantListComponent],
 })
 export class RestaurantsModule {}

@@ -1,0 +1,17 @@
+<button
+  type="button"
+  (click)="onLikeClick()"
+  [class.inactive]="likeDislikeService.isDisliked(restaurant)"
+  [class.active]="likeDislikeService.isLiked(restaurant)"
+>
+  <span class="like-button">👍 Like</span>
+</button>
+
+<button
+  type="button"
+  (click)="onDislikeClick()"
+  [class.inactive]="likeDislikeService.isLiked(restaurant)"
+  [class.active]="likeDislikeService.isDisliked(restaurant)"
+>
+  <span class="dislike-button">👎 Dislike</span>
+</button>

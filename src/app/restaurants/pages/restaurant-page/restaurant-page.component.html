@@ -13,6 +13,8 @@
       {{ restaurant.discount }}
     </p>
     <p>{{ restaurant.description }}</p>
+
+    <app-like-dislike [restaurant]="restaurant"></app-like-dislike>
   </div>
 
   <footer class="card-footer d-flex justify-content-between">

@@ -1,8 +1,18 @@
 <h1 class="h-4 mb-4">Restaurants</h1>
 
+<div class="mb-4">
+  <button
+    (click)="showLiked = !showLiked"
+    [class.active]="showLiked"
+    class="btn btn-outline-success"
+  >
+    Show only liked restaurants
+  </button>
+</div>
+
 <app-restaurant-list
   *ngIf="restaurants$ | async as restaurants; else loadingRef"
-  [restaurants]="restaurants"
+  [restaurants]="showLiked ? (restaurants | filterLiked) : restaurants"
 ></app-restaurant-list>
 
 <ng-template #loadingRef>

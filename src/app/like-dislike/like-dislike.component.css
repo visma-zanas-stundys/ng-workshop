@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  margin-left: -16px;
+}
+
+button {
+  appearance: none;
+  border: none;
+  background: none;
+  color: hsl(var(--primary-hsl));
+  padding: 8px 16px;
+  border-radius: 10rem;
+}
+
+button:hover {
+  background-color: hsl(var(--primary-hsl) / 10%);
+}
+
+button.active {
+  font-weight: bold;
+}
+
+button.inactive {
+  opacity: 0.3;
+}

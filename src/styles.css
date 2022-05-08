@@ -6,9 +6,10 @@
   --bs-body-bg: hsl(14, 28%, 88%);
 
   --surface-bg: hsl(0, 0%, 100%);
-  --primary-color: hsl(340, 82%, 52%);
+  --primary-hsl: 340 82% 52%;
+  --primary-color: hsl(var(--primary-hsl));
   --primary-text-color: white;
-  --primary-color-shadow: 0 1px 4px hsla(340, 82%, 52%, 0.278);
+  --primary-color-shadow: 0 1px 4px hsl(var(--primary-hsl) / 27%);
   --spacer: 12px;
 
   /* https://www.joshwcomeau.com/shadow-palette/ */

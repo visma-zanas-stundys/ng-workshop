@@ -9,6 +9,7 @@ import { map } from 'rxjs';
 })
 export class RestaurantsPageComponent {
   restaurants$ = this.route.data.pipe(map((data) => data['restaurants']));
+  showLiked = false;
 
   constructor(private route: ActivatedRoute) {}
 }
