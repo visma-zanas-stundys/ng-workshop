@@ -5,6 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class StarsPipe implements PipeTransform {
   transform(value: number, emoji = '⭐'): unknown {
-    return emoji.repeat(Math.round(value / 2) || 1);
+    const clampedValue = Math.min(Math.max(value, 0), 10);
+
+    return emoji.repeat(Math.round(clampedValue / 2) || 1);
   }
 }
