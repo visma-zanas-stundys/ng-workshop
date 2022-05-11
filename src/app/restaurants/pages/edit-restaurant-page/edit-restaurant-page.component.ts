@@ -17,7 +17,7 @@ const integerValidator: ValidatorFn = (control) => {
     return null; // No errors
   }
 
-  if (value % 1 === 0) {
+  if (Number.isInteger(value)) {
     return null; // No errors
   }
 
